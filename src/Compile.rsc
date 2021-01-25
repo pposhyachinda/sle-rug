@@ -23,7 +23,6 @@ import Check;
 void compile(AForm f) {
   writeFile(f.src[extension="js"].top, form2js(f));
   writeFile(f.src[extension="html"].top, toString(form2html(f)));
-  //writeFile(f.src[extension="html"].top, form2html(f));
 }
 
 HTML5Node form2html(AForm f) =
@@ -38,16 +37,6 @@ HTML5Node form2html(AForm f) =
 
 str reactImport1 = "https://unpkg.com/react@17/umd/react.development.js\" crossorigin";
 str reactImport2 = "https://unpkg.com/react-dom@17/umd/react-dom.development.js\" crossorigin";
-
-//str form2html(AForm f) =
-//  "\<html\>
-//  '\<script src=\"https://unpkg.com/react@17/umd/react.development.js\" crossorigin\>\</script\>
-//  '\<script src=\"https://unpkg.com/react-dom@17/umd/react-dom.development.js\" crossorigin\>\</script\>
-//  '\<body\>
-//  '\<div id=\"test_form\"\>\</div\>
-//  '\<script src=\"<f.src[extension="js"].file>\"\>\</script\>
-//  '\</body\>
-//  '\</html\>";
 
 str form2js(AForm f) =
   "class <className> extends React.Component {

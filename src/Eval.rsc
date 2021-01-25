@@ -62,9 +62,7 @@ VEnv eval(AForm f, Input inp, VEnv venv) {
 
 VEnv evalOnce(AForm f, Input inp, VEnv venv){ 
   for (AQuestion q <- f.questions) {
-    //println("before : <venv> + \n");
     venv = eval(q, inp, venv);
-    //println("after  : <venv> + \n");
   }
   return venv;
 }
